@@ -12,7 +12,7 @@ import { MatToolbarModule, MatExpansionModule, MatButtonModule } from '@angular/
 //layout components
 import { HeaderComponent } from './components/layout/Header/Header.component';
 import { NotesList } from './components/misc/notes/Notes-list.component';
-import { Note } from './components/misc/notes/Note.component';
+import { NoteComp } from './components/misc/notes/Note.component';
 
 
 
@@ -27,7 +27,7 @@ import { HttpClient } from 'selenium-webdriver/http';
     HeaderComponent,
     Homepage,
     NotesList,
-    Note
+    NoteComp
   ],
   imports: [
     BrowserModule,

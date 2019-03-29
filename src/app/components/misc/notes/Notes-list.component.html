@@ -1,6 +1,6 @@
 <div>
+    <p *ngIf="loading">loading</p>
     <mat-accordion>
-    <app-note></app-note>
-    <app-note></app-note>
+    <app-note *ngFor="let note of notes" [note]="note" (deleting)="deleteNote($event)"></app-note>
 </mat-accordion>
 </div>

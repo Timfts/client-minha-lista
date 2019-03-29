@@ -1,21 +1,21 @@
 <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title class="note__title">
-            This is the expansion title
+            {{note.title}}
           </mat-panel-title>
         </mat-expansion-panel-header>
       
         <div class="note__content">
             <div class="note__meta">
-                <p class="mat-small">Postado dia 25 de jan</p>
-                <p class="mat-small">Editado dia 27</p>
+                <p class="mat-small">Postado {{postedDate}}</p>
+                <p class="mat-small" *ngIf="updatedDate">Editado {{ updatedDate }}</p>
             </div>
             <div class="note__text">
-                sklca laskjdlkj alskjdlf laksjld flkjasd
+                {{note.content}}
             </div>
             <div class="note__actions">
-                    <button color="accent" mat-raised-button class="note__button">Editar</button>
-                    <button color="warn" mat-raised-button class="note__button">Apagar</button>
+                    <button color="accent" (click)="test()" mat-raised-button class="note__button">Editar</button>
+                    <button color="warn" (click)="deletePost()" mat-raised-button class="note__button">Apagar</button>
             </div>
         </div>
       
