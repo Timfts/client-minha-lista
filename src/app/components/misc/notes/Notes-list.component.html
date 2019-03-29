@@ -1,11 +1,14 @@
 <div>
-    <p *ngIf="loading">loading</p>
-    <mat-accordion>
-    <app-note *ngFor="let note of notes" [note]="note" (deleting)="deleteNote($event)"></app-note>
-</mat-accordion>
-<div *ngIf="!loading" class="list_action">
-        <button (click)="openDialog()" mat-fab>
+    <div *ngIf="loading" class="list_loading">
+        <mat-spinner></mat-spinner>
+    </div>
+    <mat-accordion *ngIf="!loading">
+        <app-note *ngFor="let note of notes" [note]="note" (deleting)="deleteNote($event)" (editing)="editNote($event)">
+        </app-note>
+    </mat-accordion>
+    <div *ngIf="!loading" class="list_action">
+        <button (click)="addNote()" mat-fab>
             <mat-icon>add</mat-icon>
         </button>
-</div>
+    </div>
 </div>

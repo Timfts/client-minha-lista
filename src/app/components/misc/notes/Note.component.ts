@@ -16,6 +16,7 @@ export class NoteComp implements OnInit{
 
   @Input() note : Note;
   @Output() deleting = new EventEmitter<number>();
+  @Output() editing = new EventEmitter<Note>();
 
   ngOnInit(){
     this.postedDate = this.formatDate(this.note.send);
@@ -29,6 +30,9 @@ export class NoteComp implements OnInit{
     const month = dateInst.toLocaleString('pt-br', { month: 'long' });
 
     return `${dateInst.getDay()} de ${month} de ${dateInst.getFullYear()}`;
+  }
+  editPost(){
+    this.editing.emit(this.note);
   }
 
   deletePost(){
