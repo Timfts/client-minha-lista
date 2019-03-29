@@ -7,14 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatExpansionModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatExpansionModule, MatButtonModule, MatIconModule, MatDialogModule } from '@angular/material';
 
 //layout components
 import { HeaderComponent } from './components/layout/Header/Header.component';
 import { NotesList } from './components/misc/notes/Notes-list.component';
 import { NoteComp } from './components/misc/notes/Note.component';
 
-
+import { DialogInst } from './components/misc/dialog/DialogInst.component';
 
 //pages
 
@@ -27,7 +27,8 @@ import { HttpClient } from 'selenium-webdriver/http';
     HeaderComponent,
     Homepage,
     NotesList,
-    NoteComp
+    NoteComp,
+    DialogInst
   ],
   imports: [
     BrowserModule,
@@ -37,8 +38,11 @@ import { HttpClient } from 'selenium-webdriver/http';
     MatToolbarModule,
     MatExpansionModule,
     MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
     HttpClientModule
   ],
+  entryComponents: [DialogInst],
   providers: [],
   bootstrap: [AppComponent]
 })
