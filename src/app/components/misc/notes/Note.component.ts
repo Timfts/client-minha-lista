@@ -29,7 +29,7 @@ export class NoteComp implements OnInit{
     const dateInst = new Date(date);
     const month = dateInst.toLocaleString('pt-br', { month: 'long' });
 
-    return `${dateInst.getDay()} de ${month} de ${dateInst.getFullYear()}`;
+    return `${dateInst.getDate()} de ${month} de ${dateInst.getFullYear()}`;
   }
   editPost(){
     this.editing.emit(this.note);
